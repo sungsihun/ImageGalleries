@@ -11,6 +11,7 @@
 
 @interface ViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) UIPageControl *pageControl;
 @property (nonatomic, weak) UIImageView *imageView1;
 @property (nonatomic, weak) UIImageView *imageView2;
 @property (nonatomic, weak) UIImageView *imageView3;
@@ -21,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.scrollView.delegate = self;
     self.imageArray = [[NSMutableArray alloc] init];
     
     // image 1
@@ -88,8 +89,24 @@
     [self.imageArray addObject:image3];
 
     
+    // tap gesture
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
     [self.scrollView addGestureRecognizer:tapGesture];
+    
+    
+    // page control
+    UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
+    pageControl.numberOfPages = self.imageArray.count;
+    pageControl.currentPage = 0;
+    pageControl.pageIndicatorTintColor = UIColor.grayColor;
+    pageControl.currentPageIndicatorTintColor = UIColor.blackColor;
+    [self.view addSubview:pageControl];
+    self.pageControl = pageControl;
+    
+    self.pageControl.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self.pageControl.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
+    [self.pageControl.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
     
 }
 
@@ -104,9 +121,12 @@
         
         DetailViewController *detailViewController = ((DetailViewController *)segue.destinationViewController);
         detailViewController.tappedImage = sender;
-        NSLog(@"%@", sender);
-        NSLog(@"%@", detailViewController.tappedImage);
     }
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    int imageIndex = self.scrollView.contentOffset.x / self.imageView1.frame.size.width;
+    self.pageControl.currentPage = imageIndex;
 }
 
 
