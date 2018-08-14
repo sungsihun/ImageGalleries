@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06B3A0DD212226020014E747 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06B3A0DC212226020014E747 /* DetailViewController.m */; };
 		06CF91182121FFE1007E60AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF91172121FFE1007E60AF /* AppDelegate.m */; };
 		06CF911B2121FFE1007E60AF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CF911A2121FFE1007E60AF /* ViewController.m */; };
 		06CF911E2121FFE1007E60AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CF911C2121FFE1007E60AF /* Main.storyboard */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06B3A0DB212226020014E747 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		06B3A0DC212226020014E747 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		06CF91132121FFE1007E60AF /* ImageGalleries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGalleries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CF91162121FFE1007E60AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06CF91172121FFE1007E60AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				06CF91172121FFE1007E60AF /* AppDelegate.m */,
 				06CF91192121FFE1007E60AF /* ViewController.h */,
 				06CF911A2121FFE1007E60AF /* ViewController.m */,
+				06B3A0DB212226020014E747 /* DetailViewController.h */,
+				06B3A0DC212226020014E747 /* DetailViewController.m */,
 				06CF911C2121FFE1007E60AF /* Main.storyboard */,
 				06CF911F2121FFE2007E60AF /* Assets.xcassets */,
 				06CF91212121FFE2007E60AF /* LaunchScreen.storyboard */,
@@ -265,6 +270,7 @@
 				06CF911B2121FFE1007E60AF /* ViewController.m in Sources */,
 				06CF91262121FFE2007E60AF /* main.m in Sources */,
 				06CF91182121FFE1007E60AF /* AppDelegate.m in Sources */,
+				06B3A0DD212226020014E747 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

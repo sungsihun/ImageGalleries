@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4aj-lb-cHd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4mJ-Ld-4I1">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -31,12 +31,62 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9ev-lT-xSX"/>
                     <connections>
                         <outlet property="scrollView" destination="4mJ-Ld-4I1" id="A4b-LF-gYO"/>
+                        <segue destination="mt4-JQ-q42" kind="show" identifier="tapActionSegue" id="2rd-Nj-jL3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1650" y="-663"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="8nP-k4-vvK">
+            <objects>
+                <viewController id="mt4-JQ-q42" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YlI-Lf-dcK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.29999999999999999" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="sdy-AG-XUh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sdy-AG-XUh" firstAttribute="leading" secondItem="BZg-GN-GIz" secondAttribute="leading" id="JwE-T2-Abg"/>
+                            <constraint firstItem="BZg-GN-GIz" firstAttribute="bottom" secondItem="sdy-AG-XUh" secondAttribute="bottom" id="XOt-nf-1ws"/>
+                            <constraint firstItem="BZg-GN-GIz" firstAttribute="trailing" secondItem="sdy-AG-XUh" secondAttribute="trailing" id="hFL-v0-rMb"/>
+                            <constraint firstItem="sdy-AG-XUh" firstAttribute="top" secondItem="BZg-GN-GIz" secondAttribute="top" id="yWx-gY-jyB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BZg-GN-GIz"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailViewScrollView" destination="sdy-AG-XUh" id="CDR-5d-uRD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MN1-KF-Efv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2468" y="-663"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e2Y-er-Va2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4aj-lb-cHd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kGt-5P-djz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cyH-3a-ghV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ab-Ok-ZiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="-663.41829085457277"/>
         </scene>
     </scenes>
 </document>
